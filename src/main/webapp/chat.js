@@ -1,14 +1,14 @@
 
 
 var     conversationNumber = 1,
-        conversationName = 'Conversation',
         conversationList = document.getElementById("conversationlist"),
         addConversation = document.getElementById('addconversation'),
         sendMessage = document.getElementById("sendmessage"),
         messageArea = document.getElementById("messagecontent"),
         currentConvNumber = 0,
         messageList = document.getElementById("messagelist0")
-        conversationButtons = [document.getElementById("0")];
+        conversationButtons = [document.getElementById("0")],
+        addPicture = document.getElementById("addpicture");
         
       
 
@@ -51,6 +51,19 @@ function changeConversation(nextConvNumber) {
     
 }
 
+
+var img = new Image();
+var div = document.getElementById('test');
+ 
+ 
+img.onload = function() {
+ 
+  div.innerHTML += '<img src="'+img.src+'" />'; 
+ 
+};
+
+ 
+
 addConversation.addEventListener('click', function makeConversation() {
 
     var e = document.createElement("LI");
@@ -78,5 +91,6 @@ messageArea.addEventListener('keydown', function (event) {
     sendTheMessage();
     return false;
   });
+
 
 conversationButtons.addEventListener('click', changeConversation());
