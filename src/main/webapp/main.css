@@ -1,0 +1,121 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27.aug.2018, 11:40:52
+    Author     : jorge
+*/
+
+html {
+    font: calibri;
+    background-color: #e6e9e9;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    padding: 5px;
+}
+
+.sidebar {
+    position: relative;
+    width: 15%;
+    background-color: rgb(153 187 255);
+    border: solid 5px black;
+    text-align: center;
+    align-content:  center;
+    border-radius: 5px;
+}
+
+.addconversation {
+    font-size: 0.6em;
+    padding: 0px;
+    border: 1px black;
+    border-style: groove;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 5px;
+    border-radus: 5px;
+}
+
+.conversationlist {
+    list-style-type: none;
+    font-size: 0.8em;
+    position: relative;
+}
+
+.conversation {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.chatwindow {
+    position: relative;
+}
+
+.chatwindow {
+    width: 60%;
+    float: right;
+    margin-right: 15%;
+    height: 550px;
+    background-color: lime;
+    text-align: center;s
+}
+
+.typingwindow {
+    float: right;
+    background-color: red;
+    width: 90%;
+    height: 6.5%;
+    position: relative; 
+}
+
+.messagewindow {
+    height: 445px;
+}
+
+#sendmessage {
+    height: 37px;
+    margin-bottom: 200px;
+}
+
+textarea {
+    resize: none;
+}
+
+#messagecontent {
+    width: 70%;
+    float: right;
+    position: relative;
+    margin-right: 200px; 
+}
+
+.sentmessage {
+    width: 60%;
+    float: right;
+    padding: 5px;
+}
+
+.receivedmessage {
+    width: 60%;
+    float: left;
+    padding: 5px;
+    border: solid 5px black;
+    border-radius: 5px;
+    background-color: red;
+}
