@@ -2,11 +2,13 @@
 
 var     conversationNumber = 1,
         conversationName = 'Conversation',
-        conversationList = $("#conversationlist"),
+        conversationList = document.getElementById("conversationlist"),
         addConversation = document.getElementById('addconversation'),
         sendMessage = document.getElementById("sendmessage"),
-        messageList = $("#messagelist"),
-        messageArea = document.getElementById("messagecontent");
+        messageArea = document.getElementById("messagecontent"),
+        currentConvNumber = 0,
+        messageList = document.getElementById("messagelist0")
+        conversationButtons = [document.getElementById("0")];
         
       
 
@@ -18,27 +20,52 @@ function getMessageContent() {
 }
 
 function sendTheMessage() {
-    //var messageContent = document.getElementById("messagecontent");
-    var messageContent = getMessageContent();
-    var messageEl = $("<li class='sentmessage'>"
-            + messageContent
-            +"</li>"
-            );
     
-    messageList.append(messageEl);
+    var messageContent = getMessageContent();
+
+    var e = document.createElement("LI");
+    e.className = "sentmessage";
+    e.textContent = messageContent;
+    
+    messageList.append(e);
+    
+    clearContents(messageArea);
 }
 
+function toggleConversation(conversationId) {
+    var x = document.getElementById(conversationId);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function clearContents(element) {
+    element.value = "";
+}
+
+function changeConversation(nextConvNumber) {
+    toggleConversation(nextConvNumber);
+    toggleConversation(currentConvNumber);
+    
+}
 
 addConversation.addEventListener('click', function makeConversation() {
-    var conversationEl = $("<li class='conversation'>"
-            + "<button id="
-            + conversationName + conversationNumber
-            + ">"
-            + conversationName + " " +conversationNumber
-            + "</button>"
-            +'</li>');
+
+    var e = document.createElement("LI");
+    e.id = "convnum" + conversationNumber;    
+    conversationList.append(e);
     
-    conversationList.append(conversationEl);
+    
+    var el = document.createElement("BUTTON");
+    el.id = conversationNumber;
+    el.className = "conversation";
+    el.textContent = "Conversation " + conversationNumber;
+    
+    document.getElementById("convnum"+conversationNumber).append(el);
+    
+    conversationButtons.push(document.getElementById(conversationNumber));
     
     conversationNumber++;
     
@@ -51,3 +78,5 @@ messageArea.addEventListener('keydown', function (event) {
     sendTheMessage();
     return false;
   });
+
+conversationButtons.addEventListener('click', changeConversation());

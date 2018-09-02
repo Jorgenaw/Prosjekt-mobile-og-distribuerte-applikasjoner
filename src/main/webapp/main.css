@@ -28,7 +28,7 @@ h3 {
 .sidebar {
     position: relative;
     width: 15%;
-    background-color: rgb(153 187 255);
+    background-color: rgb(153, 187, 255);
     border: solid 5px black;
     text-align: center;
     align-content:  center;
@@ -69,17 +69,19 @@ ul {
 }
 
 .chatwindow {
+    height: 50%;
     width: 60%;
     float: right;
     margin-right: 15%;
     height: 550px;
-    background-color: lime;
-    text-align: center;s
+    background-color: rgb(153, 187, 255);
+    text-align: center;
+    overflow-y: scroll;
+    border: solid black 3px;
 }
 
 .typingwindow {
     float: right;
-    background-color: red;
     width: 90%;
     height: 6.5%;
     position: relative; 
@@ -87,6 +89,7 @@ ul {
 
 .messagewindow {
     height: 445px;
+    overflow-y: scroll;
 }
 
 #sendmessage {
@@ -109,13 +112,14 @@ textarea {
     width: 60%;
     float: right;
     padding: 5px;
+    border: solid 3px black;
+    border-radius: 5px;
 }
 
 .receivedmessage {
     width: 60%;
     float: left;
     padding: 5px;
-    border: solid 5px black;
+    border: solid 3px black;
     border-radius: 5px;
-    background-color: red;
 }
